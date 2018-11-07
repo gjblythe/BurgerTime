@@ -1,11 +1,22 @@
-/* body {
-    background: url(https://i.redd.it/4ucmunrt3m711.jpg) no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-} */
 
-html{
-    background: url(../img/food/food.png)
+body{
+    font-family: 'Anton', sans-serif;
+    background: url(../img/food/food.png);
+}
+
+header {
+    text-align: center; 
+    font-size: 50px;   
+}
+
+.row {
+    margin: 10px;
+}
+
+.col-md {
+    margin: 20px;
+}
+
+h2 {
+    text-align: center;
 }
