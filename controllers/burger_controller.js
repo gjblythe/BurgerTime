@@ -6,20 +6,20 @@ var burger = require('../models/burger.js');
 
 router.get("/", function(req, res) {
     burger.selectAll(function(data) {
-      var burgers = {
+      var test = {
         burger: data
       };
-      console.log("burger", burgers);
-      res.render("index", burgers);
+      console.log("These are the the Burgers, called from the (text) res.", test);
+      res.render("index", test);
     
     });
   });
 
   router.post("/api/burgers", function(req, res) {
     burger.insertOne([
-      "burger_name", "devoured"
+      "burger_name"
     ], [
-      req.body.burger_name, req.body.devoured
+      req.body.burger_name
     ], function(result) {
       // Send back the ID of the new quote
       res.json({ id: result.insertId });
@@ -32,7 +32,7 @@ router.get("/", function(req, res) {
     console.log("condition", condition);
   
     burger.unpdateOne({
-      devoured: req.body.devoured
+      devoured: true
     }, condition, function(result) {
       if (result.changedRows == 0) {
         // If no rows were changed, then the ID must not exist, so 404
